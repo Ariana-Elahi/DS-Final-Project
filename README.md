@@ -1,5 +1,6 @@
 # DS-Final-Project
 Ariana Elahi, Khushi Mehta, Bharathi Thambidurai
+
 How to Use Weather Bot
 
 WeatherBot answers your weather questions using live and historical data.
