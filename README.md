@@ -1,15 +1,15 @@
 # DS-Final-Project
-# Ariana Elahi, Khushi Mehta, Bharathi Thambidurai
-# How to Use Weather Bot
+Ariana Elahi, Khushi Mehta, Bharathi Thambidurai
+How to Use Weather Bot
 
 WeatherBot answers your weather questions using live and historical data.
 
-## Steps:
+#Steps:
 
-# Step 1:
+Step 1:
 Open GCP link: http://34.133.214.249:5000- (This shows examples and how to ask questions)
 
-# Step 2: Send a POST request to `/chat` with your message:  
+Step 2: Send a POST request to `/chat` with your message:  
 Use Postman, curl, or a tool that can send JSON.
 
 Example:
@@ -19,7 +19,7 @@ Example:
 
 ---
 
-# You Can Ask:
+You Can Ask:
 
 - "current weather in Virginia"
 - "UV index in Arizona"
