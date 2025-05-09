@@ -5,7 +5,7 @@ import re
 
 app = Flask(__name__)
 
-# Load and clean 2016 dataset from final_weather_comparison (1).csv
+# load + clean 2016 dataset from final_weather_comparison (1).csv
 try:
     local_data = pd.read_csv("final_weather_comparison (1).csv")
     local_data.rename(columns={
@@ -55,7 +55,7 @@ def chat():
     match = re.search(r"in ([a-zA-Z ]+?)(?: in|$)", user_input)
     location = match.group(1).strip().title() if match else ""
 
-    # === Live WeatherAPI section ===
+    # live weather api
     if any(term in user_input for term in ["current", "uv", "humidity", "wind", "precipitation", "temperature"]) and "2016" not in user_input:
         if location:
             result = get_current_weather(location)
@@ -83,7 +83,7 @@ def chat():
                                             f"- Time: {result['Time']}"})
         return jsonify({"response": "Please specify a location for live weather info."})
 
-    # === Historical March 2016 (CSV) section ===
+    # historical weather
     if "march 2016" in user_input or "2016" in user_input:
         if location:
             filtered = local_data[
@@ -107,7 +107,7 @@ def chat():
                 wind_dir = filtered["Data.Wind.Direction"].mean()
                 return jsonify({"response": f"March 2016 average wind direction in {location}: {wind_dir:.2f}°"})
 
-            # Fallback to temp + precip
+            # fallback to temp + precip
             temp = filtered["Data.Temperature.Avg Temp"].mean()
             precip = filtered["Data.Precipitation"].mean()
             return jsonify({"response": f"March 2016 weather in {location}:\n"
