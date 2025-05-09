@@ -8,7 +8,7 @@ WeatherBot answers your weather questions using live and historical data.
 #Steps:
 
 Step 1:
-Open GCP link: http://34.133.214.249:5000- (This shows examples and how to ask questions)
+Open GCP link: http://34.133.214.249:5000 - (This shows examples and how to ask questions)
 
 Step 2: Send a POST request to `/chat` with your message:  
 Use Postman, curl, or a tool that can send JSON.
